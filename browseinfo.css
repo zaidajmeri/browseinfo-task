@@ -1,0 +1,296 @@
+body {
+    padding-top: 10px;
+    /* Adjust this value based on your navbar height */
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #000000;
+}
+
+.navbar-nav .nav-item:hover .dropdown-menu {
+    display: block;
+}
+
+.navbar {
+    background-color: #000;
+}
+
+.navbar-toggler-icon {
+    color: #2853b0 !important;
+}
+
+.navbar-brand img {
+    max-height: 40px;
+}
+
+@media (max-width: 767px) {
+    .navbar-toggler {
+        color: #000 !important;
+        /* Set the color of the navbar button in collapsed mode */
+    }
+
+    .get_demo {
+        margin-top: 10px;
+        /* Adjust the margin for the "Get Demo" button */
+    }
+}
+
+.navbar-dark {
+    color: #000000;
+    background-color: #000000;
+    /* Set the background color to white */
+}
+
+.navbar-brand img {
+    max-height: 40px;
+    /* Set the maximum height of the brand logo */
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+.btn_cta {
+    white-space: nowrap;
+}
+
+
+
+.navbar-nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-brand img {
+    max-width: 200px;
+    /* height: auto; */
+}
+
+.navbar-nav .nav-item {
+    margin: 0 10px;
+}
+
+/* Adjust spacing for the "Get Demo" button */
+.get_demo {
+    margin-left: auto;
+    margin-right: 10px;
+}
+
+.carousel {
+    position: relative;
+}
+
+.carousel-inner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+#carouselExampleCaptions {
+    height: 100vh;
+}
+
+.carousel-item img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-caption {
+    position: relative;
+    top: 40%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-15%, -15%);
+    text-align: center;
+
+}
+
+.carousel-item {
+    position: relative;
+    text-align: center;
+}
+
+.carousel-caption h2 {
+    color: #ffffff;
+}
+
+/* Add this CSS to your existing stylesheet or create a new one */
+
+.s_comparisons {
+    padding: 50px 0;
+    /* Adjust the padding as needed */
+    background-color: #f8f9fa;
+    /* Set the background color */
+}
+
+.card {
+    transition: transform 0.3s ease;
+    /* Add a smooth transition effect to the cards */
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    /* Adjust the vertical translation on hover */
+}
+
+.bg-primary-light {
+    background-color: #cce5ff;
+    /* Set the background color for the icon */
+}
+
+.fa-first-order {
+    font-size: 24px;
+    /* Adjust the font size of the icon */
+    color: #007bff;
+    /* Set the color of the icon */
+}
+
+.o_default_snippet_text {
+    color: #343a40;
+    /* Set the text color */
+}
+
+.toggle-text {
+    display: none;
+    /* Hide the additional text initially */
+}
+
+.toggle-text-button,
+.toggle-text-button1 {
+    cursor: pointer;
+    color: #007bff;
+    text-decoration: underline;
+}
+
+/* Styles for responsiveness (adjust as needed) */
+@media (max-width: 767px) {
+    .col-lg-6 {
+        margin-bottom: 20px;
+    }
+}
+
+.card-text {
+    text-align: justify;
+}
+
+.card {
+    padding-left: 10px;
+    margin-left: 10px;
+    margin-right: 30px;
+}
+
+/* .card {
+        height: 100%;
+    }
+
+    .line-clamp-4 {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        -webkit-line-clamp: 4;
+    } */
+
+.section-title h2 {
+    text-align: center;
+
+    font-weight: 600;
+    text-transform: uppercase;
+    padding-bottom: 6px;
+    color: #000;
+    letter-spacing: 0.3px;
+    padding: 0;
+}
+
+.section-title::after {
+    content: "";
+    height: 3px;
+    background: #fbb900;
+    width: 80px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.slide {
+    display: table;
+}
+
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .card {
+        margin: 0 10px;
+    }
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card {
+        gap: 20px;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Adjust the gap between cards */
+}
+
+.card {
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    margin-bottom: 20px;
+}
+
+.card{
+    transition: transform 0.3s ease-in-out;
+    overflow: hidden;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footer-section {
+    flex: 1;
+    text-align: center;
+}
+
+.vertical-line {
+    height: 100px;
+    width: 1px;
+    background-color: #000;
+}
+
+.horizontal-line {
+    width: 100%;
+    border-top: 1px solid black;
+    margin-top: 20px; 
+}

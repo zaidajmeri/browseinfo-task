@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <title>Demo Request Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 400px;
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-top: 10px;
+        }
+
+        input,
+        textarea,
+        select {
+            margin-top: 5px;
+            padding: 8px;
+            box-sizing: border-box;
+            width: 100%;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #4caf50;
+            color: #fff;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .error-message {
+            color: red;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Demo Request Form</h2>
+        <form id="demoRequestForm">
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" name="fullName" required>
+            <span class="error-message" id="fullNameError"></span>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <span class="error-message" id="emailError"></span>
+
+            <label for="skypeId">Skype ID:</label>
+            <input type="text" id="skypeId" name="skypeId" required>
+            <span class="error-message" id="skypeIdError"></span>
+
+            <label for="moduleTechnical">Module/Technical:</label>
+            <select id="moduleTechnical" name="moduleTechnical" required>
+                <option value="Sales">Sales</option>
+                <option value="Support">Support</option>
+                <option value="Development">Development</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            <span class="error-message" id="messageError"></span>
+
+            <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY"></div>
+
+            <button type="button" onclick="submitForm()">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            const fullName = document.getElementById('fullName').value;
+            const email = document.getElementById('email').value;
+            const skypeId = document.getElementById('skypeId').value;
+            const message = document.getElementById('message').value;
+
+            let isValid = true;
+
+            if (!fullName) {
+                document.getElementById('fullNameError').innerText = 'Full Name is required';
+                isValid = false;
+            } else {
+                document.getElementById('fullNameError').innerText = '';
+            }
+
+            if (!email || !isValidEmail(email)) {
+                document.getElementById('emailError').innerText = 'Valid Email is required';
+                isValid = false;
+            } else {
+                document.getElementById('emailError').innerText = '';
+            }
+
+            if (!skypeId) {
+                document.getElementById('skypeIdError').innerText = 'Skype ID is required';
+                isValid = false;
+            } else {
+                document.getElementById('skypeIdError').innerText = '';
+            }
+
+            if (!message) {
+                document.getElementById('messageError').innerText = 'Message is required';
+                isValid = false;
+            } else {
+                document.getElementById('messageError').innerText = '';
+            }
+
+            return isValid;
+        }
+
+        function submitForm() {
+            if (validateForm()) {
+                const formData = {
+                    fullName: document.getElementById('fullName').value,
+                    email: document.getElementById('email').value,
+                    skypeId: document.getElementById('skypeId').value,
+                    moduleTechnical: document.getElementById('moduleTechnical').value,
+                    message: document.getElementById('message').value,
+                    captchaResponse: grecaptcha.getResponse(),
+                };
+
+                console.log('Form Data:', formData);
+
+                alert('Form submitted successfully');
+                document.getElementById('demoRequestForm').reset();
+            }
+        }
+
+        function isValidEmail(email) {
+            // Basic email validation
+            const emailRegex = /\S+@\S+\.\S+/;
+            return emailRegex.test(email);
+        }
+    </script>
+</body>
+
+</html>
